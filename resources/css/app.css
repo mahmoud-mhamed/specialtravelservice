@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    :root {
+        /*Primary Colors*/
+
+        --color-primary-50: 255, 229, 229;
+        --color-primary-100: 255, 204, 204;
+        --color-primary-200: 255, 148, 148;
+        --color-primary-300: 255, 97, 97;
+        --color-primary-400: 255, 46, 46;
+        --color-primary-500: 247, 0, 0;
+        --color-primary-600: 199, 0, 0;
+        --color-primary-700: 148, 0, 0;
+        --color-primary-800: 97, 0, 0;
+        --color-primary-900: 51, 0, 0;
+        --color-primary-950: 25, 0, 0;
+
+        /* Secondary Colors */
+        --color-secondary-50: 230, 235, 239;
+        --color-secondary-100: 203, 211, 218;
+        --color-secondary-200: 170, 186, 195;
+        --color-secondary-300: 127, 153, 167;
+        --color-secondary-400: 86, 117, 136;
+        --color-secondary-500: 44, 62, 80; /* اللون الأساسي */
+        --color-secondary-600: 36, 54, 68;
+        --color-secondary-700: 28, 44, 56;
+        --color-secondary-800: 20, 34, 43;
+        --color-secondary-900: 12, 24, 31;
+        --color-secondary-950: 6, 12, 16;
+        --p-inputtext-border-color: var(--color-secondary-500)
+    }
+
+}
+
+.text-description{
+    color:#858589;
+}
+
+.card-content-info{
+    @apply p-2 bg-neutral-50 rounded-md text-sm gap-4 flex text-description;
+}
+
+.p-badge {
+    line-height: 2.2;
+}
+.button-classes{
+    @apply border inline-block leading-none disabled:opacity-20 disabled:cursor-progress py-2 px-8
+    rounded transition-all duration-300 text-sm font-bold whitespace-nowrap h-[33px];
+}
+.p-badge-under_construction {
+    @apply bg-gray-400 text-white
+}
+
+.p-badge-for_sale {
+    @apply bg-primary-100 text-primary-500
+}
+
+.p-badge-for_sale_on_map {
+    @apply bg-primary-500 text-white
+}
+
+.p-button-text{
+    @apply text-primary-600 enabled:hover:text-primary-500;
+}
+
+.p-button.p-button-text:enabled:focus, .p-button.p-button-outlined:enabled:focus,
+.p-button.p-button-text:enabled:hover {
+    @apply bg-primary-50;
+}
+
+.horizontal-menu.p-button-text{
+    @apply !text-dark-500;
+    background-color: rgb(248, 250, 252) !important;
+}
+
+.horizontal-menu.p-button.p-button-text:enabled:focus, .horizontal-menu.p-button.p-button-outlined:enabled:focus,
+.horizontal-menu.p-button.p-button-text:enabled:hover {
+    background-color: rgb(151, 152, 152) !important;
+}
+.bg-statistic{
+    background: url("images/bg-statistics.svg") no-repeat center;
+    background-size: cover;
+}
+.bg-chart-statistic{
+    background: url("images/bg-chart-statistic.svg") no-repeat center;
+    background-size: cover;
+}
+.p-card-body{
+    @apply h-full;
+}
+.body-center .p-card-body .p-card-content {
+    @apply h-full flex justify-center items-center !important;
+}

@@ -1,0 +1,38 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite",
+        "copy-lang": "php artisan lang:copy",
+        "copy-ability": "php artisan ability:clone",
+        "copy-enum": "php artisan enums:clone-to-js",
+        "command": "php artisan lang:copy && php artisan ability:clone && php artisan enums:clone-to-js"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.20",
+        "axios": "^1.7.4",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^1.0",
+        "postcss": "^8.4.47",
+        "sass-embedded": "^1.83.4",
+        "tailwindcss": "^3.4.13",
+        "vite": "^6.0"
+    },
+    "dependencies": {
+        "@ckeditor/ckeditor5-vue": "^7.3.0",
+        "@inertiajs/vue3": "^2.0.3",
+        "@mayasabha/ckeditor4-vue3": "^1.0.9",
+        "@primevue/themes": "^4.2.5",
+        "@vitejs/plugin-vue": "^5.2.1",
+        "@vueuse/core": "^12.7.0",
+        "apexcharts": "^4.4.0",
+        "chart.js": "^4.4.7",
+        "chartjs-plugin-datalabels": "^2.2.0",
+        "collect.js": "^4.36.1",
+        "primeicons": "^7.0.0",
+        "primevue": "^4.2.5",
+        "vue": "^3.5.13",
+        "vue-i18n": "^11.0.1"
+    }
+}

@@ -1,0 +1,22 @@
+body{
+    .link-text{
+        @apply text-primary-700 hover:text-primary-500 select-none
+    }
+    .el-container {
+        @apply bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700 text-slate-900 dark:text-slate-50 rounded-md p-2
+    }
+    .text-direction{
+        @apply rtl:text-right ltr:text-left;
+    }
+    .text-direction-reverse{
+        @apply ltr:text-right rtl:text-left;
+    }
+    .p-button-danger2{
+        background-color: rgb(185 28 28 )!important;
+        color: white!important;
+    }
+
+    .font-inherit, .font-inherit * {
+        font-size: inherit !important;
+    }
+}
