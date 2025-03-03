@@ -11,8 +11,6 @@ class BillProfileAction extends BaseAction
 {
     public function viewMainData(Bill $bill): \Inertia\Response
     {
-        $bill->load('currency');
-
         $this->setProfileTab('MainDataTab', $bill);
         $data['row'] = $bill;
         return Inertia::render('Bill/Profile/Index', compact('data'));
