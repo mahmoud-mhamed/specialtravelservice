@@ -4,10 +4,9 @@ namespace App\Actions\User;
 
 use App\Classes\Abilities;
 use App\Classes\BaseAction;
-use App\Enums\ModuleNameEnum;
 use App\Enums\IsActiveEnum;
+use App\Enums\ModuleNameEnum;
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
 class UserIndexAction extends BaseAction
@@ -20,7 +19,6 @@ class UserIndexAction extends BaseAction
         $this->useBreadcrumb();
         $query = User::query()
             ->filter()
-            ->with('roles')
             ->latest('id')
             ->search(['name', 'email']);
         if ($this->requestIsExport(Abilities::M_USERS_INDEX_EXPORT)) {
@@ -33,10 +31,8 @@ class UserIndexAction extends BaseAction
 
     public function getCreateUpdateData(): array
     {
-        $roles = DB::table('roles')->get(['id', 'name', 'title']);
         return [
             'form_data' => [
-                'roles' => $roles,
                 'is_active' => IsActiveEnum::getOptionsData(),
             ]
         ];

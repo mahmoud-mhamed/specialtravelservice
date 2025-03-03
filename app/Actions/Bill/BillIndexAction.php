@@ -6,7 +6,6 @@ use App\Classes\Abilities;
 use App\Classes\BaseAction;
 use App\Enums\ModuleNameEnum;
 use App\Models\Bill;
-use App\Models\Supplier;
 use Inertia\Inertia;
 
 class BillIndexAction extends BaseAction
@@ -19,8 +18,7 @@ class BillIndexAction extends BaseAction
         $this->allowSearch();
         $query = Bill::query()
             ->filter()
-            ->search(['notes', 'policy_number', 'chassis_number','car_type'])
-            ->with('supplier', 'client', 'disabledClient');
+            ->search(['client_name', 'service', 'notes','price']);
 
         $this->useFilter(Bill::query()->getFilters());
         $data['rows'] = $query->latest('id')->paginate();

@@ -10,9 +10,6 @@
             <el-floating-input :form="el_form" name="phone"/>
             <el-floating-password :form="el_form" :required="is_create" name="password"/>
 
-            <el-floating-dropdown :form="el_form" name="role" :required="1"
-                               option-value="name" option-label="title" :options="formData.roles"
-                               :label="$t('column.role')"/>
             <el-floating-dropdown v-if="!is_create" :form="el_form" name="is_active" :required="1"
                                :options="formData.is_active" :label="$t('column.is_active')"/>
         </div>
@@ -53,7 +50,6 @@ const el_form = useForm({
     email: el_row?.email ?? null,
     phone: el_row?.phone ?? null,
     password: el_row?.password ?? null,
-    role: el_row?.role_name ?? null,
     is_active: is_create ? true : el_row?.is_active,
 })
 const submit = () => {

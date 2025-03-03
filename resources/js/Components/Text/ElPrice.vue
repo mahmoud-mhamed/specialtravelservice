@@ -6,7 +6,7 @@
 
             {{ numberFormat(value) }}
 
-            <sub v-if="currency && currency?.code" class="text-sm font-normal">{{ currency?.code }}</sub>
+            <sub  class="text-sm font-normal">ج م</sub>
 
 
         </span>
@@ -21,7 +21,6 @@
 
 const props = defineProps({
     value: [String, Number],
-    currency: {type: Object, default: null}
 });
 
 function numberFormat(number) {

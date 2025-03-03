@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
     {
         if (User::first())
             return;
-        $superAdmin = User::firstOrCreate(['email' => 'info@codeweb.com'], [
+        $superAdmin = User::firstOrCreate(['email' => 'info@specialtravelservice.com'], [
             'name' => 'super admin',
             'password' => '123456789',
         ]);

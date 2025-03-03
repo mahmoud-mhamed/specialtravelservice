@@ -2,16 +2,13 @@
 
 namespace App\Observers;
 
-use App\Models\Archive;
 use App\Models\Bill;
-use App\Models\Currency;
 
 class BillObserver
 {
 
     public function creating(Bill $bill)
     {
-        $bill->currency_id = $bill->supplier->currency_id;
     }
 
     /**
@@ -35,7 +32,6 @@ class BillObserver
      */
     public function deleted(Bill $bill): void
     {
-        Archive::query()->where('archives.bill_id', $bill->id)->delete();
     }
 
     /**

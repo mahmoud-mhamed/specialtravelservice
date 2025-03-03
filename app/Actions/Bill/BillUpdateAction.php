@@ -9,8 +9,6 @@ use App\Models\Bill;
 
 class BillUpdateAction extends BaseAction
 {
-    protected Abilities $ability = Abilities::M_BILL_EDIT;
-
     /**
      * @throws \Throwable
      */
@@ -20,7 +18,6 @@ class BillUpdateAction extends BaseAction
         \DB::beginTransaction();
 
         $bill->update($validated_data);
-        BillStoreAction::make()->handelFiles($bill, $validated_data);
 
         \DB::commit();
         $this->makeSuccessSessionMessage();
@@ -35,9 +32,6 @@ class BillUpdateAction extends BaseAction
             ['label' => '# ' . $bill->id . ' ' . __('message.edit')],
         ]);
         $data = BillStoreAction::make()->getFormCreateUpdateData();
-        foreach ($bill->archives as $archive) {
-            $bill[$archive->collection_name->getValue() . '_url'] = $archive->file_url;
-        }
         $data['row'] = $bill;
         return inertia('Bill/Create', compact('data'));
     }

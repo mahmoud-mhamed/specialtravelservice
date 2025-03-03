@@ -24,24 +24,6 @@ class Menu
             ];
 
 
-        if (BouncerService::checkAbility(Abilities::M_CURRENCIES_INDEX))
-            $response[] = ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::CURRENCIES->value), 'icon' => 'pi-dollar',
-                'href' => \route('dashboard.currency.index'),
-                'active' => Str::startsWith($current_route_name, 'dashboard.currency.')
-            ];
-
-        if (BouncerService::checkAbility(Abilities::M_CLIENT_INDEX))
-            $response[] = ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::CLIENT->value), 'icon' => 'pi-users',
-                'href' => \route('dashboard.client.index'),
-                'active' => Str::startsWith($current_route_name, 'dashboard.client.')
-            ];
-
-        if (BouncerService::checkAbility(Abilities::M_SUPPLIER_INDEX))
-            $response[] = ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::SUPPLIER->value), 'icon' => 'pi-users',
-                'href' => \route('dashboard.supplier.index'),
-                'active' => Str::startsWith($current_route_name, 'dashboard.supplier.')
-            ];
-
         if (BouncerService::checkAbility(Abilities::M_BILL_INDEX))
             $response[] = ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::BILL->value), 'icon' => 'pi-receipt',
                 'href' => \route('dashboard.bill.index'),

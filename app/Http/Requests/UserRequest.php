@@ -39,7 +39,6 @@ class UserRequest extends FormRequest
                 'nullable', new AvatarRule()
             ],
             'is_active' => "required|boolean",
-            'role' => Rule::exists('roles', 'name'),
         ];
     }
 }

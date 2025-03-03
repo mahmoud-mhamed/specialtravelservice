@@ -13,22 +13,11 @@ return new class extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('supplier_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->foreignId('client_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->foreignId('disabled_client_id')->nullable()->constrained('clients')->cascadeOnDelete();
-            $table->foreignId('currency_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->string('purchase_type')->nullable();
-            $table->string('purchase_price')->nullable();
-            $table->string('selling_price')->nullable();
-            $table->date('purchase_date')->nullable();
-            $table->string('chassis_number')->nullable();
-            $table->string('car_type')->nullable();
-            $table->date('shipping_date')->nullable();
-            $table->string('shipping_type')->nullable();
-            $table->string('shipping_amount')->nullable();
-            $table->string('policy_number')->nullable();
+            $table->string('client_name')->nullable();
+            $table->string('service')->nullable();
+            $table->string('price')->nullable();
             $table->string('notes')->nullable();
-            $table->string('status')->nullable();
+            $table->string('status')->default(\App\Enums\BillStatusEnum::PENDING->value);
 
             $table->nullableMorphs('created_by');
             $table->nullableMorphs('updated_by');

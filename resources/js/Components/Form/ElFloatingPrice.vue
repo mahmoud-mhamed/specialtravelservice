@@ -7,7 +7,7 @@
                 :class="{'p-invalid':hasError()}"
                 v-model="form[name]"
                 mode="decimal" :maxFractionDigits="5"
-                :suffix="' ' + (currency?.code??'')"
+                :suffix="' ' + ('ج م')"
                 fluid
                 showButtons
                 buttonLayout="horizontal"
@@ -57,10 +57,6 @@ const props = defineProps({
     processing: {
         type: Boolean,
         default: false
-    },
-    currency: {
-        type: Object,
-        default: null
     },
 })
 
