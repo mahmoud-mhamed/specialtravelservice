@@ -2,7 +2,6 @@
 
 namespace App\Actions\Bill;
 
-use App\Classes\Abilities;
 use App\Classes\BaseAction;
 use App\Models\Bill;
 use Inertia\Inertia;
@@ -18,8 +17,7 @@ class BillProfileAction extends BaseAction
 
     public function setProfileTab($tap_component, Bill &$row, $title = null): void
     {
-        $row->loadMissing('currency');
-        $main_data_url = ['label' => '#' . $row->id, 'url' => route('dashboard.bill.profile.main_data', $row), 'ability' => Abilities::M_BILL_PROFILE];
+        $main_data_url = ['label' => '#' . $row->id, 'url' => route('dashboard.bill.profile.main_data', $row)];
 
         if ($title) {
             BillIndexAction::make()->useBreadcrumb([

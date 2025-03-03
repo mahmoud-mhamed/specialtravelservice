@@ -6,7 +6,7 @@
                 <ElLabelValueText :value="usePage().props?.profile_row.client_name" :label="$t('column.client_name')"/>
                 <ElLabelValueText :value="usePage().props?.profile_row.status_text" :label="$t('column.status')"/>
                 <ElLabelValuePrice :value="usePage().props?.profile_row.price"
-                                   :label="$t('message.price')"/>
+                                   :label="$t('column.price')"/>
             </div>
         </template>
         <template #tabs>

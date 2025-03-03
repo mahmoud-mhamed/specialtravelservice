@@ -3,6 +3,7 @@
 namespace App\Models;
 
 
+use App\Enums\BillStatusEnum;
 use App\Models\Builders\BillBuilder;
 use App\Observers\BillObserver;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
@@ -23,6 +24,13 @@ class Bill extends BaseModel
         'created_by_id', 'created_by_type', 'updated_by_id', 'updated_by_type', 'deleted_by_id', 'deleted_by_type'
     ];
 
+
+    protected function casts(): array
+    {
+        return [
+            'status' => BillStatusEnum::class,
+        ];
+    }
     /**
      * @return BillBuilder
      */
