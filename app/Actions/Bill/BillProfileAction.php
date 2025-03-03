@@ -5,16 +5,12 @@ namespace App\Actions\Bill;
 use App\Classes\Abilities;
 use App\Classes\BaseAction;
 use App\Models\Bill;
-use App\Services\BillService;
 use Inertia\Inertia;
 
 class BillProfileAction extends BaseAction
 {
     public function viewMainData(Bill $bill): \Inertia\Response
     {
-        BillService::make()->setBillPaidAmount($bill);
-        $bill->refresh();
-
         $bill->load('currency');
 
         $this->setProfileTab('MainDataTab', $bill);
