@@ -15,12 +15,15 @@ use Illuminate\Database\Eloquent\Attributes\ObservedBy;
  * @property string notes
  * @property string price
  * @property string status
+ * @property string payment_link
+ * @property array payment_link_data
  */
 #[ObservedBy([BillObserver::class])]
 class Bill extends BaseModel
 {
     protected $fillable = [
         'client_name', 'service', 'notes', 'price', 'status',
+        'payment_link', 'payment_link_data',
         'created_by_id', 'created_by_type', 'updated_by_id', 'updated_by_type', 'deleted_by_id', 'deleted_by_type'
     ];
 
@@ -29,8 +32,10 @@ class Bill extends BaseModel
     {
         return [
             'status' => BillStatusEnum::class,
+            'payment_link_data' => 'array',
         ];
     }
+
     /**
      * @return BillBuilder
      */

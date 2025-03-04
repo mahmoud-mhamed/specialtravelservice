@@ -61,4 +61,7 @@ return [
     'info' => 'التفاصيل',
     'property' => 'الخاصية',
     'app_payment' => 'إضافة دفعة',
+    'make_payment_link' => 'إنشاء رابط الدفع',
+    'copy_payment_link' => 'نسخ رابط الدفع',
+    'copied_successfully' => 'تم النسخ بنجاح',
 ];

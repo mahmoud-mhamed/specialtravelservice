@@ -10,10 +10,19 @@ import ElText from "@/Components/Text/ElText.vue";
 import ElActionMenuEdit from "@/Components/ActionMenu/ElActionMenuEdit.vue";
 import ElRouteBillProfile from "@/Components/ElRoutes/ElRouteBillProfile.vue";
 import ElPrice from "@/Components/Text/ElPrice.vue";
+import ElActionMenuItem from "@/Components/ActionMenu/ElActionMenuItem.vue";
+import {copy} from "@/Helpers/Functions.js";
+import {Enum} from "@/enum.js";
+import {useI18n} from "vue-i18n";
+import {useToast} from "primevue";
+import ElSecondaryButton from "@/Components/Buttons/ElSecondaryButton.vue";
 
 const props = defineProps({
     data: Object,
-})
+});
+
+const {t} = useI18n();
+const toast = useToast();
 </script>
 
 <template>
@@ -54,13 +63,25 @@ const props = defineProps({
                 </template>
             </Column>
             <Column field="created_at_text" :header="$t('column.created_at')"/>
+            <Column field="created_at_text" :header="$t('column.payment_data')">
+                <template #body="row">
+                    <ElSecondaryButton @click="copy(row.data.payment_link,toast,t)"
+                                       v-if="row.data.payment_link && row.data.status===Enum.BillStatusEnum.IN_PAY"
+                                       class="cursor-pointer">
+                        {{ $t('message.copy_payment_link') }}
+                    </ElSecondaryButton>
+                </template>
+            </Column>
             <Column :header="$t('message.actions')">
                 <template #body="row">
                     <ElActionMenu>
-                        <ElActionMenuEdit :href="route('dashboard.bill.edit',row.data.id)"/>
-                        <ElActionMenuDeleteAction :dialog-message="'# '+row.data.id"
-                                                  v-if="row.data.status=='pending'"
-                                                  :href="route('dashboard.bill.delete',row.data.id)"/>
+                        <template v-if="row.data.status==='pending'">
+                            <ElActionMenuItem :href="route('dashboard.bill.make-payment-link',row.data.id)"
+                                              :text="$t('message.make_payment_link')"/>
+                            <ElActionMenuEdit :href="route('dashboard.bill.edit',row.data.id)"/>
+                            <ElActionMenuDeleteAction :dialog-message="'# '+row.data.id"
+                                                      :href="route('dashboard.bill.delete',row.data.id)"/>
+                        </template>
                     </ElActionMenu>
                 </template>
             </Column>

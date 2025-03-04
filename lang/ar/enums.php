@@ -8,5 +8,6 @@ return [
     \App\Enums\BillStatusEnum::getFileName()=>[
         \App\Enums\BillStatusEnum::PENDING->value => 'قيد الإنتظار',
         \App\Enums\BillStatusEnum::PAID->value => 'تم الدفع',
+        \App\Enums\BillStatusEnum::IN_PAY->value => 'في إنتظار الدفع',
     ],
 ];

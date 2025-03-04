@@ -14,6 +14,7 @@ const props = defineProps({
         <section class="grid gap-8">
             <aside class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <ElDataStatisticCard :data="data.users"/>
+                <ElDataStatisticCard :data="data.bills"/>
             </aside>
         </section>
     </ElPanel>

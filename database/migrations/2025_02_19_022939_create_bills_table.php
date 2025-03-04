@@ -17,7 +17,10 @@ return new class extends Migration
             $table->string('service')->nullable();
             $table->string('price')->nullable();
             $table->string('notes')->nullable();
+            $table->string('payment_link')->nullable();
+            $table->string('payment_link_data')->nullable();
             $table->string('status')->default(\App\Enums\BillStatusEnum::PENDING->value);
+
 
             $table->nullableMorphs('created_by');
             $table->nullableMorphs('updated_by');

@@ -31,13 +31,13 @@ const copy = async (item, toast, t) => {
     toast.add({
         severity: 'success',
         detail: t('message.copied_successfully'),
-        life: 3000, // Duration in milliseconds
+        life: 4000, // Duration in milliseconds
     });
     if (navigator.clipboard && window.isSecureContext) {
-        return navigator.clipboard.writeText('{' + item + '}');
+        return navigator.clipboard.writeText( item );
     } else {
         const textArea = document.createElement('textarea');
-        textArea.value = `{${item}}`;
+        textArea.value = item;
         textArea.style.position = 'fixed';
         textArea.style.left = '-999999px';
         textArea.style.top = '-999999px';

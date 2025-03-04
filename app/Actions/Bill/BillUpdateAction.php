@@ -26,8 +26,6 @@ class BillUpdateAction extends BaseAction
 
     public function viewForm(Bill $bill): \Inertia\Response|\Inertia\ResponseFactory
     {
-        $this->checkAbility($this->ability);
-
         BillIndexAction::make()->useBreadcrumb([
             ['label' => '# ' . $bill->id . ' ' . __('message.edit')],
         ]);

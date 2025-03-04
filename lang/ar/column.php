@@ -40,6 +40,8 @@ return [
     'client_name' => 'إسم العميل',
     'service' => 'الخدمة',
     'price' => 'السعر',
+    'payment_link' => 'رابط الدفع',
+    'payment_data' => 'بيانات الدفع',
 
 
 ];
