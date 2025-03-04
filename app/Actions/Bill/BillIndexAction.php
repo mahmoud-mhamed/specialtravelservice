@@ -10,8 +10,6 @@ use Inertia\Inertia;
 
 class BillIndexAction extends BaseAction
 {
-    protected Abilities $ability = Abilities::M_BILL_INDEX;
-
     public function handle()
     {
         $this->useBreadcrumb();
@@ -28,7 +26,7 @@ class BillIndexAction extends BaseAction
     public function useBreadcrumb($append_breadcrumb = []): void
     {
         $this->breadcrumb([
-            ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::BILL), 'url' => route('dashboard.bill.index'), 'ability' => $this->ability],
+            ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::BILL), 'url' => route('dashboard.bill.index')],
             ...$append_breadcrumb
         ]);
     }
