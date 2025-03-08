@@ -1,0 +1,1 @@
+export default {"abilities":{"m_users_index":"View","m_users_index_export":"Export Excel","m_users_main_data":"Basic Information","m_users_delete":"Delete","m_users_update":"Edit","m_users_store":"Add","m_bill_index":"View"}}

@@ -1,0 +1,1 @@
+export default {"enums":{"ModuleNameEnum":{"users":"Users","bill":"Bills"},"BillStatusEnum":{"pending":"Pending","paid":"Paid","in_pay":"Waite For Pay"}}}
