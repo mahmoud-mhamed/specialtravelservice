@@ -17,9 +17,9 @@ return [
         'merchant_id' => env('QNB_MERCHANT_ID'),
         'user_name' => env('QNB_USER_NAME'),
         'password' => env('QNB_PASSWORD'),
-        'merchant_currency' => env('QNB_MERCHANT_CURRENCY','EGP'),
+        'merchant_currency' => env('QNB_MERCHANT_CURRENCY','USD'),
         'transaction_mode' => env('QNB_TRANSACTION_MODE','PURCHASE'),
-        'host_url' => env('QNB_HOST_URL','https://qnbalahli.test.gateway.mastercard.com/'),
+        'host_url' => env('QNB_HOST_URL','https://qnbalahli.test.gateway.mastercard.com'),
     ],
 
     'postmark' => [

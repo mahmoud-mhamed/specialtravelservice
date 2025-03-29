@@ -21,7 +21,7 @@ const submit = () => {
 <template>
     <main class="min-h-screen flex flex-col justify-center items-center bg-gray-100 dark:bg-gray-900">
         <div>
-            <img class="w-[200px] h-[200px]" :src="asset('images/logo.png')" alt="logo"/>
+            <img class="w-[300px] h-[300px]" :src="asset('images/logo.png')" alt="logo"/>
         </div>
 <!--        <h1 class="mt-3 text-2xl">{{$t('message.login_info')}}</h1>-->
         <div
