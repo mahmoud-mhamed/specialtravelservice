@@ -14,7 +14,7 @@ class BillMakePaymentLinkAction extends BaseAction
     {
         abort_if($bill->payment_link, 404);
 
-        $description = "مرحبا " . $bill->client_name . " - دفع رسوم خدمة " . $bill->service;
+        $description = "Welcome " . $bill->client_name . " - Pay service fees " . $bill->service;
         $response = \App\Services\QNBService::make($bill->id.time(), $bill->price)->setDescription($description)->pay();
         Log::info('make payment link', [
             'bill_id' => $bill->id,

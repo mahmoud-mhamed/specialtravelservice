@@ -86,7 +86,7 @@ class QNBService
                     "name" => $this->merchantId,
                     "url" => route('landing.home'),
 //                    "logo" => asset('images/logo.png'),
-                    "logo" => "https://specialtravelservice.com/images/logo.png",
+                    "logo" => "https://portal.specialtravelservice.com/images/logo.png",
                 ],
             ],
             "order" => [
@@ -107,7 +107,7 @@ class QNBService
      */
     private function getPaymentLink(): string
     {
-        return "{$this->paymentApiUrl}api/rest/version/67/merchant/{$this->merchantId}/session";
+        return "{$this->paymentApiUrl}/api/rest/version/67/merchant/{$this->merchantId}/session";
     }
 
     /**
