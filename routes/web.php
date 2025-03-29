@@ -6,9 +6,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/version', function () {
-    return 1.5;
+    return 1.6;
 });
 Route::get('/', function () {
+    return redirect()->route('dashboard.login.view-form');
     return \Inertia\Inertia::render('Soon');
 })->name('landing.home');
 Route::get('/command', function () {
@@ -19,5 +20,10 @@ Route::get('/command', function () {
 Route::get('/fresh', function () {
     Artisan::call('migrate:fresh --force');
     Artisan::call('db:seed --force');
+    return 'success';
+});
+
+Route::get('/delete-bill/{bill}', function (\App\Models\Bill $bill) {
+    $bill->delete();
     return 'success';
 });
