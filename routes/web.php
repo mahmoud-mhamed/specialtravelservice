@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/version', function () {
-    return 1.6;
+    return 1.8;
 });
 Route::get('/', function () {
     return redirect()->route('dashboard.login.view-form');

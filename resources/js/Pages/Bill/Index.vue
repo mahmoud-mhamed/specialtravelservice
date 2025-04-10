@@ -16,6 +16,7 @@ import {Enum} from "@/enum.js";
 import {useI18n} from "vue-i18n";
 import {useToast} from "primevue";
 import ElSecondaryButton from "@/Components/Buttons/ElSecondaryButton.vue";
+import {usePage} from "@inertiajs/vue3";
 
 const props = defineProps({
     data: Object,
@@ -54,7 +55,13 @@ const toast = useToast();
             </Column>
             <Column :header="$t('column.status')">
                 <template #body="row">
-                    <ElText :value="row.data.status_text"/>
+                    <div class="flex gap-2 items-center">
+                        <ElText :value="row.data.status_text"/>
+                        <ElSecondaryButton
+                            v-if="usePage().props.auth.user.id===1 && row.data.status===Enum.BillStatusEnum.IN_PAY"
+                            :href="route('dashboard.bill.mark-payed',row.data.id)"
+                            :text="$t('message.mark_paid')"/>
+                    </div>
                 </template>
             </Column>
             <Column :header="$t('column.notes')">
@@ -80,6 +87,11 @@ const toast = useToast();
                                               :text="$t('message.make_payment_link')"/>
                             <ElActionMenuEdit :href="route('dashboard.bill.edit',row.data.id)"/>
                             <ElActionMenuDeleteAction :dialog-message="'# '+row.data.id"
+                                                      :href="route('dashboard.bill.delete',row.data.id)"/>
+                        </template>
+                        <template v-else-if="usePage().props.auth.user.id===1">
+                            <ElActionMenuDeleteAction :dialog-message="'# '+row.data.id"
+                                                      v-if="row.data.status !==Enum.BillStatusEnum.PAID"
                                                       :href="route('dashboard.bill.delete',row.data.id)"/>
                         </template>
                     </ElActionMenu>

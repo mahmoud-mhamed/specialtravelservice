@@ -64,4 +64,5 @@ return [
     'make_payment_link' => 'Create Payment Link',
     'copy_payment_link' => 'Copy Payment Link',
     'copied_successfully' => 'Copied Successfully',
+    'mark_paid' => 'Mark Paid',
 ];
