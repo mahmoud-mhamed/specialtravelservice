@@ -64,4 +64,5 @@ return [
     'make_payment_link' => 'إنشاء رابط الدفع',
     'copy_payment_link' => 'نسخ رابط الدفع',
     'copied_successfully' => 'تم النسخ بنجاح',
+    'mark_paid' => 'التحويل مدفوعة',
 ];

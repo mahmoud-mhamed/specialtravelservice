@@ -38,6 +38,7 @@ Route::group([
         Route::get('/{bill}/edit', [\App\Actions\Bill\BillUpdateAction::class, 'viewForm'])->name('edit');
         Route::post('/{bill}/update', \App\Actions\Bill\BillUpdateAction::class)->name('update');
         Route::delete('/{bill}', Actions\Bill\BillDeleteAction::class)->name('delete');
+        Route::get('/{bill}/mark-payed', Actions\Bill\BillMarkPayedAction::class)->name('mark-payed');
 
         Route::get('/{bill}/make-payment-link', Actions\Bill\BillMakePaymentLinkAction::class)->name('make-payment-link');
 
