@@ -63,6 +63,7 @@ return [
     'app_payment' => 'إضافة دفعة',
     'make_payment_link' => 'إنشاء رابط الدفع',
     'copy_payment_link' => 'نسخ رابط الدفع',
+    'copy_payment_link_with_terms_conditions' => 'مع الشروط والأحكام',
     'copied_successfully' => 'تم النسخ بنجاح',
     'mark_paid' => 'التحويل مدفوعة',
 ];

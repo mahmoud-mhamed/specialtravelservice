@@ -12,6 +12,9 @@ Route::get('/', function () {
     return redirect()->route('dashboard.login.view-form');
     return \Inertia\Inertia::render('Soon');
 })->name('landing.home');
+
+Route::get('/bill/{bill}/pay', \App\Actions\Bill\VisitorPayBillAction::class)->name('visitor.bill.pay');
+
 Route::get('/command', function () {
     Artisan::call('migrate --force');
     Artisan::call('storage:link');

@@ -17,6 +17,7 @@ import {useI18n} from "vue-i18n";
 import {useToast} from "primevue";
 import ElSecondaryButton from "@/Components/Buttons/ElSecondaryButton.vue";
 import {usePage} from "@inertiajs/vue3";
+import Dialog from "primevue/dialog";
 
 const props = defineProps({
     data: Object,
@@ -72,11 +73,18 @@ const toast = useToast();
             <Column field="created_at_text" :header="$t('column.created_at')"/>
             <Column field="created_at_text" :header="$t('column.payment_data')">
                 <template #body="row">
-                    <ElSecondaryButton @click="copy(row.data.payment_link,toast,t)"
-                                       v-if="row.data.payment_link && row.data.status===Enum.BillStatusEnum.IN_PAY"
-                                       class="cursor-pointer">
-                        {{ $t('message.copy_payment_link') }}
-                    </ElSecondaryButton>
+                   <div class="flex gap-2 flex-col" v-if="row.data.payment_link && row.data.status===Enum.BillStatusEnum.IN_PAY">
+                       <div>
+                           <ElSecondaryButton @click="copy(row.data.payment_link,toast,t)" class="cursor-pointer">
+                               {{ $t('message.copy_payment_link') }}
+                           </ElSecondaryButton>
+                       </div>
+                       <div>
+                           <ElSecondaryButton @click="copy(route('visitor.bill.pay',row.data.id),toast,t)" class="cursor-pointer">
+                               {{ $t('message.copy_payment_link_with_terms_conditions') }}
+                           </ElSecondaryButton>
+                       </div>
+                   </div>
                 </template>
             </Column>
             <Column :header="$t('message.actions')">
