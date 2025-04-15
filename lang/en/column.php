@@ -42,6 +42,7 @@ return [
     'price' => 'Price',
     'payment_link' => 'Payment Link',
     'payment_data' => 'Payment Data',
+    'terms_and_conditions' => 'Terms And Conditions',
 
 
 ];

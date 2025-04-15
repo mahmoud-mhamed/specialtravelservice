@@ -65,4 +65,10 @@ return [
     'copy_payment_link' => 'Copy Payment Link',
     'copied_successfully' => 'Copied Successfully',
     'mark_paid' => 'Mark Paid',
+    'copy_payment_link_with_terms_conditions' => 'Payment Link with Terms and Conditions',
+    'pay_bill' => 'Pay Bill',
+    'bill_payed_thanks' => 'Bill Payed Thanks',
+    'welcome_for_pay' => 'Welcome',
+    'pay_now' => 'Pay Now',
+    'please_accept_terms_and_conditions' => 'Please Accept Terms and Conditions',
 ];

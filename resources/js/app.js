@@ -58,7 +58,7 @@ createInertiaApp({
         const pages = import.meta.glob('./Pages/**/*.vue', {eager: true});
         let page = pages[`./Pages/${name}.vue`];
         if (!page.default?.layout) {
-            if (name.startsWith('Soon') || name.startsWith('Users/Login')) {
+            if (name.startsWith('Soon') || name.startsWith('Users/Login') || name.startsWith('Visitor')) {
                 page.default.layout = LoginLayout;
                 return page;
             }
@@ -94,4 +94,5 @@ createInertiaApp({
             .directive('tooltip', Tooltip)
             .mount(el)
     },
-}).then(r => {})
+}).then(r => {
+})
