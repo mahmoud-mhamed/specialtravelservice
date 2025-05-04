@@ -6,7 +6,7 @@
 
             {{ numberFormat(value) }}
 
-            <sub  class="text-sm font-normal">$</sub>
+            <sub  class="text-sm font-normal">EG</sub>
 
 
         </span>

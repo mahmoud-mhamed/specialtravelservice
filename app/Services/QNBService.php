@@ -61,7 +61,7 @@ class QNBService
      */
     private function getExpiryDate(): string
     {
-        return now()->addDays(1)->format('Y-m-d\TH:i:s.v\Z');
+        return now()->addDays(4)->format('Y-m-d\TH:i:s.v\Z');
     }
 
     /**

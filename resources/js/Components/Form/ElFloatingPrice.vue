@@ -7,7 +7,7 @@
                 :class="{'p-invalid':hasError()}"
                 v-model="form[name]"
                 mode="decimal" :maxFractionDigits="5"
-                :suffix="' ' + ('$')"
+                :suffix="' ' + ('EG')"
                 fluid
                 showButtons
                 buttonLayout="horizontal"
