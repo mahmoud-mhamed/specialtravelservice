@@ -71,4 +71,5 @@ return [
     'welcome_for_pay' => 'Welcome',
     'pay_now' => 'Pay Now',
     'please_accept_terms_and_conditions' => 'Please Accept Terms and Conditions',
+    'pay_with' => 'Pay With',
 ];

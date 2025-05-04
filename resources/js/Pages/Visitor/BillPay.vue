@@ -7,6 +7,7 @@ import {useForm} from "@inertiajs/vue3";
 import {ref} from "vue";
 import Dialog from "primevue/dialog";
 import ElChartComponent from "@/Components/Charts/ElChartComponent.vue";
+import ElPrice from "@/Components/Text/ElPrice.vue";
 
 const props = defineProps({
     data: Object
@@ -33,10 +34,25 @@ const dialog_terms_and_conditions = ref(false);
             </div>
             <div>
                 {{ $t('column.price') }} :
-                {{ data.bill.price }} $
+                <ElPrice :value="data.bill.price"/>
             </div>
 
         </div>
+        <div class="mt-6 flex gap-3">
+            <div class="text-xl">{{ $t('message.pay_with') }} :</div>
+            <div class="flex gap-4 justify-center">
+                <div class="payment-method-icon">
+                    <img :src="asset('images/payment/visa.png')" alt="Visa" class="h-14 -mt-3"/>
+                </div>
+                <div class="payment-method-icon">
+                    <img :src="asset('images/payment/mastercard.png')" alt="Mastercard" class="h-10 -mt-1"/>
+                </div>
+                <div class="payment-method-icon">
+                    <img :src="asset('images/payment/meeza.png')" alt="ميزة" class="h-10"/>
+                </div>
+            </div>
+        </div>
+
         <div class="flex justify-between mt-3">
             <div class="font-bold">
                 <div class="flex items-center content-center justify-center gap-2">
