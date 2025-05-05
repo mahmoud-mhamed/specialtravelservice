@@ -1,0 +1,54 @@
+{
+  "node_modules/primeicons/fonts/primeicons.eot": {
+    "file": "assets/primeicons-DMOk5skT.eot",
+    "src": "node_modules/primeicons/fonts/primeicons.eot"
+  },
+  "node_modules/primeicons/fonts/primeicons.svg": {
+    "file": "assets/primeicons-Dr5RGzOO.svg",
+    "src": "node_modules/primeicons/fonts/primeicons.svg"
+  },
+  "node_modules/primeicons/fonts/primeicons.ttf": {
+    "file": "assets/primeicons-MpK4pl85.ttf",
+    "src": "node_modules/primeicons/fonts/primeicons.ttf"
+  },
+  "node_modules/primeicons/fonts/primeicons.woff": {
+    "file": "assets/primeicons-WjwUDZjB.woff",
+    "src": "node_modules/primeicons/fonts/primeicons.woff"
+  },
+  "node_modules/primeicons/fonts/primeicons.woff2": {
+    "file": "assets/primeicons-C6QP2o4f.woff2",
+    "src": "node_modules/primeicons/fonts/primeicons.woff2"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-qYRK7037.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/images/bg-chart-statistic.svg": {
+    "file": "assets/bg-chart-statistic-Dbomih6r.svg",
+    "src": "resources/css/images/bg-chart-statistic.svg"
+  },
+  "resources/css/images/bg-statistics.svg": {
+    "file": "assets/bg-statistics-DSeqoFmJ.svg",
+    "src": "resources/css/images/bg-statistics.svg"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-yCPphcIG.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-CiucTM49.css",
+      "assets/app-qYRK7037.css"
+    ],
+    "assets": [
+      "assets/primeicons-DMOk5skT.eot",
+      "assets/primeicons-C6QP2o4f.woff2",
+      "assets/primeicons-WjwUDZjB.woff",
+      "assets/primeicons-MpK4pl85.ttf",
+      "assets/primeicons-Dr5RGzOO.svg",
+      "assets/bg-statistics-DSeqoFmJ.svg",
+      "assets/bg-chart-statistic-Dbomih6r.svg"
+    ]
+  }
+}
